@@ -7,8 +7,12 @@ export default function(dir: string, file:string) {
 	const ext = path.extname(file)
 	if (!EXTS.includes(ext)) return
 
+	// probably should have done it as file.jpg.webp and not file.webp-- too late
+	// const webpFile = file + ".webp"
+
 	const webpFile = file.replace(ext, ".webp")
-	const commands = ["cwebp", file, "-o " + webpFile]
+
+	const commands = ["cwebp", `"${file}"`, "-o " + `"${webpFile}"`]
 
 	if (ext == ".png")
 		commands.splice(2, 0, "-lossless")

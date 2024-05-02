@@ -1,0 +1,1 @@
+Requires node < v18 installed (or setting the pkg taget from package.json might work)
