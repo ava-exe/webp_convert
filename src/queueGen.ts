@@ -14,7 +14,7 @@ export default function(dir: string, file:string) {
 
 	const commands = ["cwebp", `"${file}"`, "-o " + `"${webpFile}"`]
 
-	if (ext == ".png")
+	if (false) // (ext == ".png")
 		commands.splice(2, 0, "-lossless")
 
 	return execCmd( commands.join(" ") )
